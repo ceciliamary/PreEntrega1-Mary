@@ -6,7 +6,36 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
+  const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+  const isTrue = true;
+    if (isTrue) {
+      resolve([{
+        id: 1, 
+        name: "remera",
+        descripcion: "Remera de algodon", 
+        cantidad: 10, 
+      },
+    ]);
+    } else {
+      reject([]);
+    }
+  }, 3000);
+  });
+
+  console.log(myPromise);
   
+  myPromise
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally((err) => {
+    console.log("termino el proceso");
+  });
+
   return (
     <>
     <NavBarComponent/>
