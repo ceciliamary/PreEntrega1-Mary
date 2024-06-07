@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import "./ItemListContainerComponent.css";
 import CountComponent from "../CountComponent/CountComponent";
- 
+import { Link } from "react-router-dom";
 import { height } from "@fortawesome/free-solid-svg-icons/faCartPlus";
 import { getAllProducts } from "../../services/productsServices";
 
@@ -26,7 +26,7 @@ return (
           <Card.Text>
             {product.description}
           </Card.Text>
-          <Button variant="primary">Ir al detalle</Button>
+          <Link to={`/item/${product.id}`}>Ir al detalle</Link>
         </Card.Body>
       </Card>
     })}
